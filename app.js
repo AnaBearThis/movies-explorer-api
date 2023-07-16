@@ -9,12 +9,11 @@ const validateSign = require('./middlewares/validation');
 const errorHandler = require('./middlewares/error');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-const { PORT = 3000 } = process.env;
-const BASE_URL = 'mongodb://0.0.0.0:27017/bitfilmsdb';
+const { PORT, NODE_ENV, DB_URL } = process.env;
+const BASE_URL = NODE_ENV === 'production' ? DB_URL : 'mongodb://0.0.0.0:27017/bitfilmsdb';
 
 const allowedCors = [
-  'mesto-ana-bear.nomoreparties.sbs',
-  'https://mesto-ana-bear.nomoreparties.sbs',
+  'movies-ana-bear.nomoredomains.xyz',
 ];
 
 mongoose
