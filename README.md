@@ -13,3 +13,4 @@
 https://github.com/AnaBearThis/movies-explorer-api
 
 ## URL сервера:
+https://api.movies-ana-bear.nomoredomains.xyz
