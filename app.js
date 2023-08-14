@@ -14,6 +14,10 @@ const BASE_URL = NODE_ENV === 'production' ? DB_URL : 'mongodb://0.0.0.0:27017/b
 
 const allowedCors = [
   'movies-ana-bear.nomoredomains.xyz',
+  'http://localhost:3001',
+  'localhost:3001',
+  'https://praktikum.tk',
+  'http://praktikum.tk',
 ];
 
 mongoose
@@ -33,7 +37,6 @@ app.use(cookieParser());
 app.use((req, res, next) => {
   const { origin } = req.headers;
   const { method } = req;
-  console.log(origin);
   if (allowedCors.includes(origin)) {
     res.header('Access-Control-Allow-Origin', origin);
     res.header('Access-Control-Allow-Credentials', true);
