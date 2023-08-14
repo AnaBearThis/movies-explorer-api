@@ -58,7 +58,7 @@ module.exports.login = (req, res, next) => {
             }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret');
             console.log(JWT_SECRET);
             res.cookie('jwt', jwt, {
-              maxAge: 604800,
+              maxAge: 604800000,
               httpOnly: true,
               sameSite: true,
             });
@@ -74,7 +74,7 @@ module.exports.login = (req, res, next) => {
 
 module.exports.updateUserInfo = (req, res, next) => {
   const { name, email } = req.body;
-
+  console.log(name);
   User.findByIdAndUpdate(req.user._id, { name, email }, { new: true, runValidators: true })
     .then((user) => {
       if (!user) {
