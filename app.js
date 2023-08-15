@@ -14,6 +14,8 @@ const BASE_URL = NODE_ENV === 'production' ? DB_URL : 'mongodb://0.0.0.0:27017/b
 
 const allowedCors = [
   'movies-ana-bear.nomoredomains.xyz',
+  'http://movies-ana-bear.nomoredomains.xyz',
+  'https://movies-ana-bear.nomoredomains.xyz',
   'http://localhost:3001',
   'localhost:3001',
   'https://praktikum.tk',
